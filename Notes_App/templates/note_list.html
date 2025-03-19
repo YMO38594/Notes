@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Bootstrap CSS (if you're using Bootstrap) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List</title>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="my-4">Notes</h1>
+    <a href="{% url 'note_create' create.pk %}" class="btn btn-primary mb-4">Create New Note</a>
+    <div class="row">
+        {% for note in notes %}
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 18rem; background-color: darkmagenta; color: white;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ note.title }}</h5>
+                    <p class="card-text">{{ note.content|truncatechars:50 }}</p> <!-- Display first 50 chars of the note -->
+                    <a href="{% url 'note_update' note.pk %}" class="btn btn-warning">Edit Note</a>
+                    <form action="{% url 'note_delete' note.pk %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger mt-2">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

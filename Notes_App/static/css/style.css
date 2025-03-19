@@ -1,0 +1,25 @@
+body {
+    background-color: lightslategrey; /* Fallback background color */
+    background-image: url("{% static 'images/Background Tuning Of Images With DeepLab V3 Using Pixellib.jpeg' %}");
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Ensures the background image stays fixed while scrolling */
+    margin: 0; /* Removes default margin */
+    font-family: Arial, sans-serif; /* Sets a default font */
+    color: white; /* Sets default text color */
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    display: block;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent black background to improve text readability */
+    margin: 0; /* Removes default margin */
+}
+
+a{
+    color: white;
+    font-size: 24px;
+}

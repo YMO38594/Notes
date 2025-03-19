@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %} <!-- Load the static template tag -->
+    <style>
+        body {
+            background-image: url("{% static 'images/Possiblity (2).png' %}");
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+        }
+        form {
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: white; text-align: center">{% if form.instance.pk %}Update Note{% else %}Create Note{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button style="font-size: 20px" type="submit">Save</button>
+    </form>
+    <a href="{% url 'note_list' %}" style="font-size: 20px; color: white">Cancel</a>
+</body>
+</html>
