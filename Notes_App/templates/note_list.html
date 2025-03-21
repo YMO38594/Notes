@@ -1,8 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="static/css/style.css">
-    <!-- Bootstrap CSS (if you're using Bootstrap) -->
+
+    <style>
+        body{
+            background-image: url("../static/images/10 Dark Relaxing Wallpaper for Smartphones, INSTANT DOWNLOAD, Screensaver, Desktop Background - Etsy.jpeg");
+        }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,8 +17,8 @@
 <body>
 
 <div class="container">
-    <h1 class="my-4">Notes</h1>
-    <a href="{% url 'note_create' create.pk %}" class="btn btn-primary mb-4">Create New Note</a>
+    <h1 class="my-4" style="color: white;">Notes</h1>
+    <a href="{% url 'note_create' %}" class="btn btn-primary mb-4">Create New Note</a>
     <div class="row">
         {% for note in notes %}
         <div class="col-md-4 mb-4">
